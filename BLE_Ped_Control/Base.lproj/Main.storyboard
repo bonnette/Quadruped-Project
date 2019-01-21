@@ -18,20 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8Z-EX-RfR">
-                                <rect key="frame" x="313" y="82" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8Z-EX-RfR">
+                                <rect key="frame" x="300" y="82" width="56" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Up">
+                                <state key="normal" title="Forward">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="Up:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FPo-CY-cVm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFw-7A-0W3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFw-7A-0W3">
                                 <rect key="frame" x="313" y="173" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Stop">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,20 +38,18 @@
                                     <action selector="Stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PVp-aD-CXY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNV-FG-0v2">
-                                <rect key="frame" x="310" y="262" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNV-FG-0v2">
+                                <rect key="frame" x="296" y="262" width="68" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Down">
+                                <state key="normal" title="Backward">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="Down:" destination="BYZ-38-t0r" eventType="touchUpInside" id="73z-bn-2YF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="690-Cj-0Ic">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="690-Cj-0Ic">
                                 <rect key="frame" x="147" y="173" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Left">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,9 +58,8 @@
                                     <action selector="Left:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gu0-he-Cp3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkV-YV-Pwc">
-                                <rect key="frame" x="522" y="173" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkV-YV-Pwc">
+                                <rect key="frame" x="494" y="173" width="36" height="29"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Right">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,6 +70,23 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GNV-FG-0v2" secondAttribute="trailing" constant="303" id="3V3-cc-QsQ"/>
+                            <constraint firstItem="I8Z-EX-RfR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="300" id="8vo-tb-pm8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mkV-YV-Pwc" secondAttribute="bottom" constant="173" id="Jhs-8h-zZJ"/>
+                            <constraint firstItem="690-Cj-0Ic" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="173" id="LhF-FX-vrY"/>
+                            <constraint firstItem="GNV-FG-0v2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="296" id="QQz-av-Qik"/>
+                            <constraint firstItem="I8Z-EX-RfR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="QlX-lE-e2z"/>
+                            <constraint firstItem="GNV-FG-0v2" firstAttribute="top" secondItem="sFw-7A-0W3" secondAttribute="bottom" constant="59" id="W5N-el-2XY"/>
+                            <constraint firstItem="mkV-YV-Pwc" firstAttribute="leading" secondItem="sFw-7A-0W3" secondAttribute="trailing" constant="149" id="aj3-1W-dyY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mkV-YV-Pwc" secondAttribute="trailing" constant="137" id="akc-oM-o3I"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I8Z-EX-RfR" secondAttribute="trailing" constant="311" id="awx-Vx-6az"/>
+                            <constraint firstItem="690-Cj-0Ic" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="eAK-hI-bKW"/>
+                            <constraint firstItem="sFw-7A-0W3" firstAttribute="leading" secondItem="690-Cj-0Ic" secondAttribute="trailing" constant="136" id="fFx-59-AdA"/>
+                            <constraint firstItem="sFw-7A-0W3" firstAttribute="top" secondItem="I8Z-EX-RfR" secondAttribute="bottom" constant="61" id="j75-ce-CSM"/>
+                            <constraint firstItem="mkV-YV-Pwc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="173" id="mlt-eF-UVK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="690-Cj-0Ic" secondAttribute="bottom" constant="172" id="x6s-gY-cBD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
