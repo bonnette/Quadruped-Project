@@ -21,9 +21,18 @@ var led = false // This holds the recieved (from the Arduino) led state (on or o
 // This Viewcontroller controls the "View" as well as the "Blootooth" services
 class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
     @IBAction func Stop(_ sender: Any) {
+        print("Stop Button Clicked") // sent to console for debug purposes
+        // This sends an "on" signal to the Arduino
+        savedPeripheral!.writeValue(Data.init(bytes: [69]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
+        
     }
+    
     @IBAction func Up(_ sender: Any) {
+        print("Up Button Clicked") // sent to console for debug purposes
+        // This sends an "on" signal to the Arduino
+        savedPeripheral!.writeValue(Data.init(bytes: [65]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
     }
+    
     @IBAction func Down(_ sender: Any) {
     }
     @IBAction func Right(_ sender: Any) {
