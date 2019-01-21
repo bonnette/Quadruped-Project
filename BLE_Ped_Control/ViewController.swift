@@ -1,10 +1,11 @@
 //
 //  ViewController.swift
-//  Toast
+//  BLE_Ped_Controller
 //
 //  Created by Bear Cahill on 2/13/18.
 //  Copyright © 2018 Bear Cahill. All rights reserved.
-//  Modified by Larry Bonnette (12/2018) to control an led on an ESP32 (Arduino "like" device)
+//  From a LinkedIn IOS training course
+//  Modified by Larry Bonnette (1/2019) to control an ESP32 spider like robot
 //
 
 import UIKit
