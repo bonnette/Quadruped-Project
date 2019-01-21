@@ -34,10 +34,21 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     }
     
     @IBAction func Down(_ sender: Any) {
+        print("Backwards Button Clicked") // sent to console for debug purposes
+        // This sends an "on" signal to the Arduino
+        savedPeripheral!.writeValue(Data.init(bytes: [66]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
     }
+    
     @IBAction func Right(_ sender: Any) {
+        print("Right Button Clicked") // sent to console for debug purposes
+        // This sends an "on" signal to the Arduino
+        savedPeripheral!.writeValue(Data.init(bytes: [70]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
     }
+    
     @IBAction func Left(_ sender: Any) {
+        print("Left Button Clicked") // sent to console for debug purposes
+        // This sends an "on" signal to the Arduino
+        savedPeripheral!.writeValue(Data.init(bytes: [71]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
     }
     
 
