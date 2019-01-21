@@ -4,13 +4,21 @@
     Ported to Arduino ESP32 by Evandro Copercini
     
     Modified 1/2019 by Larry Bonnette to add walking quadreped code
-    
     Changed service and charateristic UUID to DF01, DF02, and DF03 to make it easier to play with.
+    
+    12 DOF Quad code from:
+*** 2018-09-30
+*** Modified by V.Palleschi from the original by Salvatore Fancello,
+*** http://www.progettiarduino.com
+*** e-mail: salvatorefancello89@gmail.com
+*** e-mail: vpalleschi@gmail.com
+*** https://www.thingiverse.com/thing:3119066
+
 
    Create a BLE server that, once we receive a connection, will send periodic notifications.
-   The service advertises itself as: 6E400001-B5A3-F393-E0A9-E50E24DCCA9E
-   Has a characteristic of: 6E400002-B5A3-F393-E0A9-E50E24DCCA9E - used for receiving data with "WRITE" 
-   Has a characteristic of: 6E400003-B5A3-F393-E0A9-E50E24DCCA9E - used to send data with  "NOTIFY"
+   The service advertises itself as: DF01
+   Has a characteristic of: DF02 - used for receiving data with "WRITE" 
+   Has a characteristic of: DF03 - used to send data with  "NOTIFY"
 
    The design of creating the BLE server is:
    1. Create a BLE Server
@@ -23,6 +31,7 @@
    In this example rxValue is the data received (only accessible inside that function).
    And txValue is the data to be sent, in this example just a byte incremented every second. 
 */
+
 #include <BLEDevice.h>
 #include <BLEServer.h>
 #include <BLEUtils.h>
