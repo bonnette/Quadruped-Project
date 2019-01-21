@@ -12,6 +12,7 @@
 		A7159ABD21F50B7500618D70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7159ABB21F50B7500618D70 /* Main.storyboard */; };
 		A7159ABF21F50B7700618D70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7159ABE21F50B7700618D70 /* Assets.xcassets */; };
 		A7159AC221F50B7700618D70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7159AC021F50B7700618D70 /* LaunchScreen.storyboard */; };
+		A7159ACB21F5120E00618D70 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7159ACA21F5120E00618D70 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A7159ABE21F50B7700618D70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7159AC121F50B7700618D70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7159AC321F50B7700618D70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7159ACA21F5120E00618D70 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7159ACB21F5120E00618D70 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				A7159AB621F50B7500618D70 /* BLE_Ped_Control */,
 				A7159AB521F50B7500618D70 /* Products */,
+				A7159AC921F5120D00618D70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +66,14 @@
 				A7159AC321F50B7700618D70 /* Info.plist */,
 			);
 			path = BLE_Ped_Control;
+			sourceTree = "<group>";
+		};
+		A7159AC921F5120D00618D70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7159ACA21F5120E00618D70 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
