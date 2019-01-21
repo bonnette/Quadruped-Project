@@ -23,32 +23,32 @@ var led = false // This holds the recieved (from the Arduino) led state (on or o
 class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
     @IBAction func Stop(_ sender: Any) {
         print("Stop Button Clicked") // sent to console for debug purposes
-        // This sends an "on" signal to the Arduino
+        // This sends an "E" to the ESP32 to stop the robot
         savedPeripheral!.writeValue(Data.init(bytes: [69]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
         
     }
     
     @IBAction func Up(_ sender: Any) {
         print("Up Button Clicked") // sent to console for debug purposes
-        // This sends an "on" signal to the Arduino
+        // This sends an "A" to the ESP32 to make the robot go forward
         savedPeripheral!.writeValue(Data.init(bytes: [65]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
     }
     
     @IBAction func Down(_ sender: Any) {
         print("Backwards Button Clicked") // sent to console for debug purposes
-        // This sends an "on" signal to the Arduino
+         // This sends an "B" to the ESP32 to make the robot go backward
         savedPeripheral!.writeValue(Data.init(bytes: [66]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
     }
     
     @IBAction func Right(_ sender: Any) {
         print("Right Button Clicked") // sent to console for debug purposes
-        // This sends an "on" signal to the Arduino
+         // This sends an "F" to the ESP32 to make the robot go right
         savedPeripheral!.writeValue(Data.init(bytes: [70]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
     }
     
     @IBAction func Left(_ sender: Any) {
         print("Left Button Clicked") // sent to console for debug purposes
-        // This sends an "on" signal to the Arduino
+         // This sends an "G" to the ESP32 to make the robot go left
         savedPeripheral!.writeValue(Data.init(bytes: [71]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
     }
     
