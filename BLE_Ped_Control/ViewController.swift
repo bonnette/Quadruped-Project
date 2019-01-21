@@ -6,7 +6,7 @@
 //  Copyright © 2018 Bear Cahill. All rights reserved.
 //  From a LinkedIn IOS training course
 //  Modified by Larry Bonnette (1/2019) to control an ESP32 spider like robot
-//aa
+//
 
 import UIKit
 import CoreBluetooth
