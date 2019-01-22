@@ -116,7 +116,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
                 }
             }
         }
-        // We are connected to the robot and we have all the info needed to begin so....
+        // We are connected to the robot so change the bt status label 
         btStatus.text = "Bluetooth Connected" // We change the text on status label
         btStatus.textColor = UIColor.black
         btStatus.backgroundColor = UIColor.green
@@ -158,6 +158,12 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     
     var centralManager : CBCentralManager!
     var myPeripheral : CBPeripheral?
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        btStatus.layer.masksToBounds = true
+        btStatus.layer.cornerRadius = 8.0
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -68,10 +68,10 @@
                                     <action selector="Right:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FxI-5L-8rs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Disconnected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qN-4e-41D">
-                                <rect key="frame" x="241" y="33" width="185" height="21"/>
-                                <color key="backgroundColor" red="1" green="0.44787145043162235" blue="0.20762528325529184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Disconnected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qN-4e-41D">
+                                <rect key="frame" x="227" y="30" width="212" height="21"/>
+                                <color key="backgroundColor" red="1" green="0.086830658269475669" blue="0.043941262450882368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -79,24 +79,24 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GNV-FG-0v2" secondAttribute="trailing" constant="303" id="3V3-cc-QsQ"/>
-                            <constraint firstItem="8qN-4e-41D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="7s9-O5-flS"/>
                             <constraint firstItem="I8Z-EX-RfR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="300" id="8vo-tb-pm8"/>
+                            <constraint firstItem="8qN-4e-41D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="GNl-6R-pfk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mkV-YV-Pwc" secondAttribute="bottom" constant="173" id="Jhs-8h-zZJ"/>
                             <constraint firstItem="690-Cj-0Ic" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="173" id="LhF-FX-vrY"/>
                             <constraint firstItem="GNV-FG-0v2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="296" id="QQz-av-Qik"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I8Z-EX-RfR" secondAttribute="trailing" constant="311" id="TzT-0I-Hmi"/>
+                            <constraint firstItem="I8Z-EX-RfR" firstAttribute="top" secondItem="8qN-4e-41D" secondAttribute="bottom" constant="31" id="UW5-vM-QAX"/>
                             <constraint firstItem="GNV-FG-0v2" firstAttribute="top" secondItem="sFw-7A-0W3" secondAttribute="bottom" constant="59" id="W5N-el-2XY"/>
                             <constraint firstItem="mkV-YV-Pwc" firstAttribute="leading" secondItem="sFw-7A-0W3" secondAttribute="trailing" constant="149" id="aj3-1W-dyY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mkV-YV-Pwc" secondAttribute="trailing" constant="137" id="akc-oM-o3I"/>
-                            <constraint firstItem="I8Z-EX-RfR" firstAttribute="top" secondItem="8qN-4e-41D" secondAttribute="bottom" constant="28" id="cel-PZ-5Hn"/>
-                            <constraint firstItem="8qN-4e-41D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="241" id="dNe-It-uBg"/>
                             <constraint firstItem="690-Cj-0Ic" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="eAK-hI-bKW"/>
                             <constraint firstItem="sFw-7A-0W3" firstAttribute="leading" secondItem="690-Cj-0Ic" secondAttribute="trailing" constant="136" id="fFx-59-AdA"/>
                             <constraint firstItem="sFw-7A-0W3" firstAttribute="top" secondItem="I8Z-EX-RfR" secondAttribute="bottom" constant="61" id="j75-ce-CSM"/>
                             <constraint firstItem="mkV-YV-Pwc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="173" id="mlt-eF-UVK"/>
+                            <constraint firstItem="8qN-4e-41D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="227" id="sEL-cn-q7f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GNV-FG-0v2" secondAttribute="bottom" constant="83" id="uUN-BV-WEb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8qN-4e-41D" secondAttribute="trailing" constant="228" id="wAG-Ck-RO6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="690-Cj-0Ic" secondAttribute="bottom" constant="172" id="x6s-gY-cBD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8qN-4e-41D" secondAttribute="trailing" constant="241" id="zNR-Nf-YFk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -106,6 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="23.838080959520241" y="45.600000000000001"/>
         </scene>
     </scenes>
 </document>
