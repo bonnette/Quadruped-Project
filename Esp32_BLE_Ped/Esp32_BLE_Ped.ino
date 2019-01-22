@@ -3,10 +3,10 @@
     Based on Neil Kolban example for IDF: https://github.com/nkolban/esp32-snippets/blob/master/cpp_utils/tests/BLE%20Tests/SampleNotify.cpp
     Ported to Arduino ESP32 by Evandro Copercini
     
-    Modified 1/2019 by Larry Bonnette to add walking quadreped code
+    Modified 1/2019 by Larry Bonnette to add walking quadreped code and
     Changed service and charateristic UUID to DF01, DF02, and DF03 to make it easier to play with.
     
-    12 DOF Quad code from:
+12 DOF Quad code from:
 *** 2018-09-30
 *** Modified by V.Palleschi from the original by Salvatore Fancello,
 *** http://www.progettiarduino.com
@@ -14,8 +14,8 @@
 *** e-mail: vpalleschi@gmail.com
 *** https://www.thingiverse.com/thing:3119066
 
-
-   Create a BLE server that, once we receive a connection, will send periodic notifications.
+   Bluetooth Setup:
+   Create a BLE server that, once we receive a connection, will send periodic notifications back to the iPhone.
    The service advertises itself as: DF01
    Has a characteristic of: DF02 - used for receiving data with "WRITE" 
    Has a characteristic of: DF03 - used to send data with  "NOTIFY"
@@ -298,7 +298,7 @@ class MyCallbacks: public BLECharacteristicCallbacks {
 
         for (int i = 0; i < rxValue.length(); i++) {
           Serial.print(rxValue[i]);
-          rcvdata = rxValue[i]; // Place data from phone in global
+          rcvdata = rxValue[i]; // Place data comming from iPhone in global
         }
       }
     }
