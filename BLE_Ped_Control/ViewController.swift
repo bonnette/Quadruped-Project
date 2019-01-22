@@ -21,6 +21,7 @@ var led = false // This holds the recieved (from the Arduino) led state (on or o
 
 // This Viewcontroller controls the "View" as well as the "Blootooth" services
 class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
+    @IBOutlet weak var btStatus: UILabel!
     @IBAction func Stop(_ sender: Any) {
         print("Stop Button Clicked") // sent to console for debug purposes
         // This sends an "E" to the ESP32 to stop the robot
@@ -75,6 +76,11 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     }
     // if we get disconnected we start the scan again
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        // We are connected to toaster and we have all the info needed to begin so....
+        btStatus.text = "Bluetooth Disconnected" // We change the text on status label
+        btStatus.textColor = UIColor.white
+        btStatus.backgroundColor = UIColor.red
+        btStatus.textAlignment = .center
         central.scanForPeripherals(withServices: nil, options: nil)
     }
     // If we connect to a Bluetooth device we look for services
@@ -111,7 +117,10 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             }
         }
         // We are connected to toaster and we have all the info needed to begin so....
-
+        btStatus.text = "Bluetooth Connected" // We change the text on status label
+        btStatus.textColor = UIColor.black
+        btStatus.backgroundColor = UIColor.green
+        btStatus.textAlignment = .center
     }
     
     // If we get a notification of "Data"
