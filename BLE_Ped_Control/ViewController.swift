@@ -161,6 +161,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
 
     
     override func viewWillAppear(_ animated: Bool) {
+        // Add rounded corners to btStatus label
         btStatus.layer.masksToBounds = true
         btStatus.layer.cornerRadius = 8.0
     }
