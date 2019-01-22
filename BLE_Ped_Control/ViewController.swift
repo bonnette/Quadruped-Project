@@ -76,7 +76,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     }
     // if we get disconnected we start the scan again
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-        // We are connected to toaster and we have all the info needed to begin so....
+        // We disconnected from robot so we change the bt status label
         btStatus.text = "Bluetooth Disconnected" // We change the text on status label
         btStatus.textColor = UIColor.white
         btStatus.backgroundColor = UIColor.red
@@ -116,7 +116,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
                 }
             }
         }
-        // We are connected to toaster and we have all the info needed to begin so....
+        // We are connected to the robot and we have all the info needed to begin so....
         btStatus.text = "Bluetooth Connected" // We change the text on status label
         btStatus.textColor = UIColor.black
         btStatus.backgroundColor = UIColor.green
