@@ -22,6 +22,7 @@ var led = false // This holds the recieved (from the Arduino) led state (on or o
 // This Viewcontroller controls the "View" as well as the "Blootooth" services
 class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
     @IBOutlet weak var btStatus: UILabel!
+    @IBOutlet weak var stopBtn: UIButton!
     @IBAction func Stop(_ sender: Any) {
         print("Stop Button Clicked") // sent to console for debug purposes
         // This sends an "E" to the ESP32 to stop the robot
@@ -164,6 +165,8 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         // Add rounded corners to btStatus label
         btStatus.layer.masksToBounds = true
         btStatus.layer.cornerRadius = 8.0
+        // Round stop Button
+        stopBtn.layer.cornerRadius = 0.5 * stopBtn.bounds.size.width
     }
     
     override func viewDidLoad() {
