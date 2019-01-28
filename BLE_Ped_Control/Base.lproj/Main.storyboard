@@ -18,17 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Disconnected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qN-4e-41D">
-                                <rect key="frame" x="225" y="36" width="216" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.086830658269475669" blue="0.043941262450882368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="216" id="4nc-gi-Sih"/>
-                                    <constraint firstAttribute="height" constant="30" id="mzo-7Y-Nvf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8Z-EX-RfR">
                                 <rect key="frame" x="281" y="119" width="102" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,27 +80,34 @@
                                     <action selector="Right:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FxI-5L-8rs"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bt_r" translatesAutoresizingMaskIntoConstraints="NO" id="hLK-w7-67s">
+                                <rect key="frame" x="312" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="AOJ-gr-gKv"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ffp-ty-NFA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="690-Cj-0Ic" secondAttribute="bottom" constant="142" id="21d-A8-Oto"/>
                             <constraint firstItem="mkV-YV-Pwc" firstAttribute="leading" secondItem="sFw-7A-0W3" secondAttribute="trailing" constant="85" id="2SQ-wo-hfl"/>
+                            <constraint firstItem="hLK-w7-67s" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="6in-CX-ZMi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GNV-FG-0v2" secondAttribute="bottom" constant="51" id="6kg-3U-se5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hLK-w7-67s" secondAttribute="trailing" constant="315" id="Dhi-mE-oF0"/>
+                            <constraint firstItem="hLK-w7-67s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="312" id="G9K-td-jkz"/>
                             <constraint firstItem="I8Z-EX-RfR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="281" id="Gat-J6-hxJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8qN-4e-41D" secondAttribute="trailing" constant="226" id="Lgh-o7-ot8"/>
                             <constraint firstItem="690-Cj-0Ic" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="116" id="MVY-o7-egy"/>
                             <constraint firstItem="GNV-FG-0v2" firstAttribute="top" secondItem="sFw-7A-0W3" secondAttribute="bottom" constant="44" id="NLw-Iz-fwM"/>
-                            <constraint firstItem="8qN-4e-41D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="QYz-7A-emn"/>
                             <constraint firstItem="sFw-7A-0W3" firstAttribute="leading" secondItem="690-Cj-0Ic" secondAttribute="trailing" constant="82" id="bK3-BL-rUY"/>
-                            <constraint firstItem="I8Z-EX-RfR" firstAttribute="top" secondItem="8qN-4e-41D" secondAttribute="bottom" constant="53" id="bQv-K2-f0e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mkV-YV-Pwc" secondAttribute="bottom" constant="143" id="c4q-hq-SCg"/>
-                            <constraint firstItem="8qN-4e-41D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="225" id="cs4-mE-HwN"/>
                             <constraint firstItem="sFw-7A-0W3" firstAttribute="leading" secondItem="690-Cj-0Ic" secondAttribute="trailing" constant="82" id="g7B-n6-aNt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I8Z-EX-RfR" secondAttribute="trailing" constant="284" id="grw-kT-syp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mkV-YV-Pwc" secondAttribute="trailing" constant="116" id="jmh-Nu-X9y"/>
                             <constraint firstItem="sFw-7A-0W3" firstAttribute="top" secondItem="I8Z-EX-RfR" secondAttribute="bottom" constant="37" id="lbm-MB-r1g"/>
                             <constraint firstItem="GNV-FG-0v2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="281" id="pZy-za-dwc"/>
                             <constraint firstItem="mkV-YV-Pwc" firstAttribute="leading" secondItem="sFw-7A-0W3" secondAttribute="trailing" constant="85" id="rJX-Vv-eks"/>
+                            <constraint firstItem="I8Z-EX-RfR" firstAttribute="top" secondItem="hLK-w7-67s" secondAttribute="bottom" constant="59" id="sYr-gx-Okq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GNV-FG-0v2" secondAttribute="trailing" constant="284" id="tG5-An-6p9"/>
                             <constraint firstItem="mkV-YV-Pwc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="202" id="tel-Er-KLF"/>
                             <constraint firstItem="690-Cj-0Ic" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="203" id="vac-Y1-2lm"/>
@@ -119,7 +115,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="btStatus" destination="8qN-4e-41D" id="awC-DI-fGG"/>
+                        <outlet property="btStatus" destination="hLK-w7-67s" id="uNG-Be-dwr"/>
                         <outlet property="stopBtn" destination="sFw-7A-0W3" id="dwR-zZ-mNN"/>
                     </connections>
                 </viewController>
@@ -128,4 +124,7 @@
             <point key="canvasLocation" x="23.838080959520241" y="45.600000000000001"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bt_r" width="1024" height="1024"/>
+    </resources>
 </document>

@@ -21,7 +21,8 @@ var led = false // This holds the recieved (from the Arduino) led state (on or o
 
 // This Viewcontroller controls the "View" as well as the "Blootooth" services
 class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
-    @IBOutlet weak var btStatus: UILabel!
+
+    @IBOutlet weak var btStatus: UIImageView!
     @IBOutlet weak var stopBtn: UIButton!
     @IBAction func Stop(_ sender: Any) {
         print("Stop Button Clicked") // sent to console for debug purposes
@@ -78,10 +79,8 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     // if we get disconnected we start the scan again
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         // We disconnected from robot so we change the bt status label
-        btStatus.text = "Bluetooth Disconnected" // We change the text on status label
-        btStatus.textColor = UIColor.white
-        btStatus.backgroundColor = UIColor.red
-        btStatus.textAlignment = .center
+        btStatus.image = UIImage(named:"bt_r") // We change the graphic
+
         central.scanForPeripherals(withServices: nil, options: nil)
     }
     // If we connect to a Bluetooth device we look for services
@@ -118,10 +117,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             }
         }
         // We are connected to the robot so change the bt status label 
-        btStatus.text = "Bluetooth Connected" // We change the text on status label
-        btStatus.textColor = UIColor.black
-        btStatus.backgroundColor = UIColor.green
-        btStatus.textAlignment = .center
+        btStatus.image = UIImage(named:"bt_g") // We change the graphic image to the "green connected"
     }
     
     // If we get a notification of "Data"
