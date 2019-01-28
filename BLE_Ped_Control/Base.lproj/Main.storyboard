@@ -115,7 +115,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bckBtn" destination="GNV-FG-0v2" id="Dbf-eW-ekh"/>
                         <outlet property="btStatus" destination="hLK-w7-67s" id="uNG-Be-dwr"/>
+                        <outlet property="fwdBtn" destination="I8Z-EX-RfR" id="dz6-lR-cQv"/>
+                        <outlet property="lBtn" destination="690-Cj-0Ic" id="nmF-Ra-aQn"/>
+                        <outlet property="rBtn" destination="mkV-YV-Pwc" id="HzR-p3-4mw"/>
                         <outlet property="stopBtn" destination="sFw-7A-0W3" id="dwR-zZ-mNN"/>
                     </connections>
                 </viewController>

@@ -31,24 +31,28 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         
     }
     
+    @IBOutlet weak var fwdBtn: UIButton!
     @IBAction func Up(_ sender: Any) {
         print("Up Button Clicked") // sent to console for debug purposes
         // This sends an "A" to the ESP32 to make the robot go forward
         savedPeripheral!.writeValue(Data.init(bytes: [65]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
     }
     
+    @IBOutlet weak var bckBtn: UIButton!
     @IBAction func Down(_ sender: Any) {
         print("Backwards Button Clicked") // sent to console for debug purposes
          // This sends an "B" to the ESP32 to make the robot go backward
         savedPeripheral!.writeValue(Data.init(bytes: [66]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
     }
     
+    @IBOutlet weak var rBtn: UIButton!
     @IBAction func Right(_ sender: Any) {
         print("Right Button Clicked") // sent to console for debug purposes
          // This sends an "F" to the ESP32 to make the robot go right
         savedPeripheral!.writeValue(Data.init(bytes: [70]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
     }
     
+    @IBOutlet weak var lBtn: UIButton!
     @IBAction func Left(_ sender: Any) {
         print("Left Button Clicked") // sent to console for debug purposes
          // This sends an "G" to the ESP32 to make the robot go left
@@ -80,6 +84,21 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         // We disconnected from robot so we change the bt status label
         btStatus.image = UIImage(named:"bt_r") // We change the graphic
+        
+        stopBtn.isEnabled = false // Disable the toast button
+        stopBtn.alpha = 0.3 // Dim the toast button
+        
+        fwdBtn.isEnabled = false // Disable the toast button
+        fwdBtn.alpha = 0.3 // Dim the toast button
+        
+        bckBtn.isEnabled = false // Disable the toast button
+        bckBtn.alpha = 0.3 // Dim the toast button
+        
+        rBtn.isEnabled = false // Disable the toast button
+        rBtn.alpha = 0.3 // Dim the toast button
+        
+        lBtn.isEnabled = false // Disable the toast button
+        lBtn.alpha = 0.3 // Dim the toast button
 
         central.scanForPeripherals(withServices: nil, options: nil)
     }
@@ -118,6 +137,21 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         }
         // We are connected to the robot so change the bt status label 
         btStatus.image = UIImage(named:"bt_g") // We change the graphic image to the "green connected"
+        
+        stopBtn.isEnabled = true // Disable the toast button
+        stopBtn.alpha = 1.0 // Dim the toast button
+        
+        fwdBtn.isEnabled = true // Disable the toast button
+        fwdBtn.alpha = 1.0 // Dim the toast button
+        
+        bckBtn.isEnabled = true // Disable the toast button
+        bckBtn.alpha = 1.0 // Dim the toast button
+        
+        rBtn.isEnabled = true // Disable the toast button
+        rBtn.alpha = 1.0 // Dim the toast button
+        
+        lBtn.isEnabled = true // Disable the toast button
+        lBtn.alpha = 1.0 // Dim the toast button
     }
     
     // If we get a notification of "Data"
@@ -163,6 +197,21 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         btStatus.layer.cornerRadius = 8.0
         // Round stop Button
         stopBtn.layer.cornerRadius = 0.5 * stopBtn.bounds.size.width
+        
+        stopBtn.isEnabled = false // Disable the toast button
+        stopBtn.alpha = 0.3 // Dim the toast button
+        
+        fwdBtn.isEnabled = false // Disable the toast button
+        fwdBtn.alpha = 0.3 // Dim the toast button
+        
+        bckBtn.isEnabled = false // Disable the toast button
+        bckBtn.alpha = 0.3 // Dim the toast button
+        
+        rBtn.isEnabled = false // Disable the toast button
+        rBtn.alpha = 0.3 // Dim the toast button
+        
+        lBtn.isEnabled = false // Disable the toast button
+        lBtn.alpha = 0.3 // Dim the toast button
     }
     
     override func viewDidLoad() {
