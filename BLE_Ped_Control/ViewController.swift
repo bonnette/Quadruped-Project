@@ -59,7 +59,33 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         savedPeripheral!.writeValue(Data.init(bytes: [71]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
     }
     
+    @IBOutlet weak var stndBtn: UIButton!
+    @IBAction func standBtn(_ sender: Any) {
+        print("Stand Clicked") // sent to console for debug purposes
+        // This sends an "s" to the ESP32 to make the robot stand
+        savedPeripheral!.writeValue(Data.init(bytes: [115]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
+    }
+    
+    @IBOutlet weak var sqtBtn: UIButton!
+    @IBAction func squatBtn(_ sender: Any) {
+        print("Squat Clicked") // sent to console for debug purposes
+        // This sends an "q" to the ESP32 to make the robot squat
+        savedPeripheral!.writeValue(Data.init(bytes: [113]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
+    }
+    
+    @IBOutlet weak var wvlBtn: UIButton!
+    @IBAction func waveLeft(_ sender: Any) {
+        print("Wave Left Clicked") // sent to console for debug purposes
+        // This sends an "l" to the ESP32 to make the robot wave right
+        savedPeripheral!.writeValue(Data.init(bytes: [108]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
+    }
 
+    @IBOutlet weak var wvrBtn: UIButton!
+    @IBAction func waveRight(_ sender: Any) {
+        print("Wave Right Clicked") // sent to console for debug purposes
+        // This sends an "r" to the ESP32 to make the robot wave right
+        savedPeripheral!.writeValue(Data.init(bytes: [114]), for: LedSendChar, type: CBCharacteristicWriteType.withResponse)
+    }
     
     // This looks to see if Bluetooth is powered on
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -85,20 +111,33 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         // We disconnected from robot so we change the bt status label
         btStatus.image = UIImage(named:"bt_r") // We change the graphic
         
-        stopBtn.isEnabled = false // Disable the toast button
-        stopBtn.alpha = 0.3 // Dim the toast button
+        stopBtn.isEnabled = false // Disable button
+        stopBtn.alpha = 0.3 // Dim button
         
-        fwdBtn.isEnabled = false // Disable the toast button
-        fwdBtn.alpha = 0.3 // Dim the toast button
+        fwdBtn.isEnabled = false // Disable button
+        fwdBtn.alpha = 0.3 // Dim button
         
-        bckBtn.isEnabled = false // Disable the toast button
-        bckBtn.alpha = 0.3 // Dim the toast button
+        bckBtn.isEnabled = false // Disable button
+        bckBtn.alpha = 0.3 // Dim button
         
-        rBtn.isEnabled = false // Disable the toast button
-        rBtn.alpha = 0.3 // Dim the toast button
+        rBtn.isEnabled = false // Disable button
+        rBtn.alpha = 0.3 // Dim button
         
-        lBtn.isEnabled = false // Disable the toast button
-        lBtn.alpha = 0.3 // Dim the toast button
+        lBtn.isEnabled = false // Disable button
+        lBtn.alpha = 0.3 // Dim button
+        
+        // special Buttons
+        stndBtn.isEnabled = false // Disable button
+        stndBtn.alpha = 0.3 // Dim button
+        
+        sqtBtn.isEnabled = false // Disable button
+        sqtBtn.alpha = 0.3 // Dim button
+        
+        wvlBtn.isEnabled = false // Disable button
+        wvlBtn.alpha = 0.3 // Dim button
+        
+        wvrBtn.isEnabled = false // Disable button
+        wvrBtn.alpha = 0.3 // Dim button
 
         central.scanForPeripherals(withServices: nil, options: nil)
     }
@@ -138,20 +177,33 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         // We are connected to the robot so change the bt status label 
         btStatus.image = UIImage(named:"bt_g") // We change the graphic image to the "green connected"
         
-        stopBtn.isEnabled = true // Disable the toast button
-        stopBtn.alpha = 1.0 // Dim the toast button
+        stopBtn.isEnabled = true // Enable button
+        stopBtn.alpha = 1.0 // Brighten button
         
-        fwdBtn.isEnabled = true // Disable the toast button
-        fwdBtn.alpha = 1.0 // Dim the toast button
+        fwdBtn.isEnabled = true // Enable button
+        fwdBtn.alpha = 1.0 // Brighten button
         
-        bckBtn.isEnabled = true // Disable the toast button
-        bckBtn.alpha = 1.0 // Dim the toast button
+        bckBtn.isEnabled = true // Enable button
+        bckBtn.alpha = 1.0 // Brighten button
         
-        rBtn.isEnabled = true // Disable the toast button
-        rBtn.alpha = 1.0 // Dim the toast button
+        rBtn.isEnabled = true // Enable button
+        rBtn.alpha = 1.0 // Brighten button
         
-        lBtn.isEnabled = true // Disable the toast button
-        lBtn.alpha = 1.0 // Dim the toast button
+        lBtn.isEnabled = true // Disable button
+        lBtn.alpha = 1.0 // Brighten button
+        
+        // special Buttons
+        stndBtn.isEnabled = true // Enable button
+        stndBtn.alpha = 1.0 // Brighten button
+        
+        sqtBtn.isEnabled = true // Enable button
+        sqtBtn.alpha = 1.0 // Brighten button
+        
+        wvlBtn.isEnabled = true // Enable button
+        wvlBtn.alpha = 1.0 // Brighten button
+        
+        wvrBtn.isEnabled = true // Enable button
+        wvrBtn.alpha = 1.0 // Brighten button
     }
     
     // If we get a notification of "Data"
@@ -198,20 +250,33 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         // Round stop Button
         stopBtn.layer.cornerRadius = 0.5 * stopBtn.bounds.size.width
         
-        stopBtn.isEnabled = false // Disable the toast button
-        stopBtn.alpha = 0.3 // Dim the toast button
+        stopBtn.isEnabled = false // Disable button
+        stopBtn.alpha = 0.3 // Dim button
         
-        fwdBtn.isEnabled = false // Disable the toast button
-        fwdBtn.alpha = 0.3 // Dim the toast button
+        fwdBtn.isEnabled = false // Disable button
+        fwdBtn.alpha = 0.3 // Dim button
         
-        bckBtn.isEnabled = false // Disable the toast button
-        bckBtn.alpha = 0.3 // Dim the toast button
+        bckBtn.isEnabled = false // Disable button
+        bckBtn.alpha = 0.3 // Dim button
         
-        rBtn.isEnabled = false // Disable the toast button
-        rBtn.alpha = 0.3 // Dim the toast button
+        rBtn.isEnabled = false // Disable button
+        rBtn.alpha = 0.3 // Dim button
         
-        lBtn.isEnabled = false // Disable the toast button
-        lBtn.alpha = 0.3 // Dim the toast button
+        lBtn.isEnabled = false // Disable button
+        lBtn.alpha = 0.3 // Dim button
+        
+        // special Buttons
+        stndBtn.isEnabled = false // Disable button
+        stndBtn.alpha = 0.3 // Dim button
+        
+        sqtBtn.isEnabled = false // Disable button
+        sqtBtn.alpha = 0.3 // Dim button
+        
+        wvlBtn.isEnabled = false // Disable button
+        wvlBtn.alpha = 0.3 // Dim button
+        
+        wvrBtn.isEnabled = false // Disable button
+        wvrBtn.alpha = 0.3 // Dim button
     }
     
     override func viewDidLoad() {
