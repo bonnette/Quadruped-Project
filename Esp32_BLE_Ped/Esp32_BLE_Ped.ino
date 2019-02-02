@@ -65,10 +65,10 @@ const int LED = 2; // Could be different depending on the dev board. I used the 
 void servocontrol(int n, int a) // n= servo number a= angle
 {
 if (n > 5){
-a = map(a, 0, 180, SERVOMIN, SERVOMAX);
+a = map(a, 180, 0, SERVOMIN, SERVOMAX);
 pwm.setPWM(n, 0, a);} //was n-6
 else {
-a = map(a, 180, 0, SERVOMIN, SERVOMAX);
+a = map(a, 0, 180, SERVOMIN, SERVOMAX);
 pwm.setPWM(n, 0, a);}
 }
 
