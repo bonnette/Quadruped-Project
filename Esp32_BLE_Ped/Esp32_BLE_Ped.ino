@@ -135,7 +135,7 @@ moveleg(4,-1,130,100, FAST);
 }
 
 void wave_r(){
-
+moveleg(2,-1,150,90, SLOW);
 for (int j=0; j< 3; j++){
 moveleg(4,-1,160,0, SLOW);
 for (int i=30; i <= 110; i++){
@@ -146,9 +146,11 @@ moveleg(4,i,-1,-1, FAST);
 }
 }
 moveleg(4,90,90,90, SLOW);
+moveleg(2,90,90,90, SLOW);
 }
 
 void wave_l(){
+moveleg(3,-1,150,90, SLOW);
 for (int j=0; j< 3; j++){
 moveleg(1,-1,160,0, SLOW);
 for (int i=30; i <= 110; i++){
@@ -159,6 +161,7 @@ moveleg(1,i,-1,-1, FAST);
 }
 }
 moveleg(1,90,90,90, SLOW);
+moveleg(3,90,90,90, SLOW);
 }
 
 void skew_r(){
@@ -187,9 +190,9 @@ moveleg(2,-1,140,80, FAST);
 moveleg(3,-1,140,80, FAST);
 }
 
-void rotate_r(){
+void rotate_l(){
 yield();
-Serial.println("In rot R Loop");
+Serial.println("In rot L Loop");
 stp(1,160, SLOW);
 stp(2,160, SLOW);
 stp(3,20, SLOW);
@@ -201,9 +204,9 @@ mov(2,90, FAST);
 mov(1,90, FAST);
 }
 
-void rotate_l(){
+void rotate_r(){
 yield();
-Serial.println("In rot L Loop");
+Serial.println("In rot R Loop");
 stp(1,20, SLOW);
 stp(2,20, SLOW);
 stp(3,160, SLOW);
@@ -215,9 +218,9 @@ mov(3,90, FAST);
 mov(4,90, FAST);
 }
 
-void forward(){
+void backward(){
 yield();
-Serial.println("In Forward Loop");
+Serial.println("In Backward Loop");
 mov(4,50, FAST);
 mov(1,50, FAST);
 mov(3,50, FAST);
@@ -230,9 +233,9 @@ delay(SLOW);
 iniz();
 }
 
-void backward(){
+void forward(){
 yield();
-Serial.println("In Backward Loop");
+Serial.println("In Forward Loop");
 mov(2,130, FAST);
 mov(3,130, FAST);
 mov(1,130, FAST);
