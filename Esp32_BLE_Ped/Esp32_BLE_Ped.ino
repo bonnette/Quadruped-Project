@@ -122,7 +122,7 @@ void stand()
 {
 moveleg(1,-1,50,80, FAST);
 moveleg(2,-1,50,80, FAST);
-moveleg(3,-1,35,80, FAST);
+moveleg(3,-1,50,80, FAST);
 moveleg(4,-1,50,80, FAST);
 }
 
