@@ -61,29 +61,33 @@ const int LED = 2; // Could be different depending on the dev board. I used the 
 #define SERVICE_UUID           "DF01" // UART service UUID
 #define CHARACTERISTIC_UUID_RX "DF02"
 #define CHARACTERISTIC_UUID_TX "DF03"
-
+ 
 void servocontrol(int n, int a) // n= servo number a= angle
 {
-
-if (n > 8){
-a = map(a, 0, 180, SERVOMIN, SERVOMAX);
-pwm.setPWM(n-9, 0, a);}
-else {
+if (n > 5){
 a = map(a, 180, 0, SERVOMIN, SERVOMAX);
-pwm1.setPWM(n, 0, a);}
+pwm.setPWM(n, 0, a);} //was n-6
+else {
+a = map(a, 0, 180, SERVOMIN, SERVOMAX);
+pwm.setPWM(n, 0, a);}
 }
+
+// n = leg number, an = coxa servo (sits on the body), f = femer servo (one servo out from the body), t = tibia servo (last servo out from the body)
+// example: Leg #1  an = i2c channel 0, f = i2c channel 1, t = i2c channel 2
+// moveleg converts each leg segment into a channel number, and the angle. It then sends it to servocontrol(servo number (I2C channel) , angle)
 
 void moveleg(int n, int an, int f, int t, int w)
 {
-yield();
-if (t >=0) {servocontrol(3*(n-1)+2, t);};
+yield(); // This is here to allow the use of an ESP8266
+if (t >=0) {servocontrol(3*(n-1)+2, t);}; // move the tibia first
 delay(w);
-if (f >=0) {servocontrol(3*(n-1)+1, f);};
+if (f >=0) {servocontrol(3*(n-1)+1, f);}; // Then move the femer
 delay(w);
-if (an >=0) {servocontrol(3*(n-1), an);};
+if (an >=0) {servocontrol(3*(n-1), an);}; // and lastly move the coxa (body servo)
 delay(w);
 }
 
+// n = leg number
 void stp(int n, int a, int w)
 {
 yield();
@@ -100,6 +104,7 @@ yield();
 
 }
 
+// n = leg number, a = body servo (coxa) angle
 void mov(int n, int a, int w)
 {
 moveleg(n,a,-1,-1, w);
@@ -111,8 +116,6 @@ moveleg(1,90,90,90, FAST);
 moveleg(2,90,90,90, FAST);
 moveleg(3,90,90,90, FAST);
 moveleg(4,90,90,90, FAST);
-moveleg(5,90,90,90, FAST);
-moveleg(6,90,90,90, FAST);
 }
 
 void stand()
@@ -120,9 +123,7 @@ void stand()
 moveleg(1,-1,50,80, FAST);
 moveleg(2,-1,50,80, FAST);
 moveleg(3,-1,50,80, FAST);
-moveleg(4,-1,35,80, FAST);
-moveleg(5,-1,50,80, FAST);
-moveleg(6,-1,50,80, FAST);
+moveleg(4,-1,50,80, FAST);
 }
 
 void squat()
@@ -131,25 +132,25 @@ moveleg(1,-1,130,100, FAST);
 moveleg(2,-1,130,100, FAST);
 moveleg(3,-1,130,100, FAST);
 moveleg(4,-1,130,100, FAST);
-moveleg(5,-1,130,100, FAST);
-moveleg(6,-1,130,100, FAST);
 }
 
 void wave_r(){
-
+moveleg(2,-1,150,90, SLOW);
 for (int j=0; j< 3; j++){
-moveleg(6,-1,160,0, SLOW);
+moveleg(4,-1,160,0, SLOW);
 for (int i=30; i <= 110; i++){
-moveleg(6,i,-1,-1, FAST);
+moveleg(4,i,-1,-1, FAST);
 }
 for (int i=110; i >= 20; i--){
-moveleg(6,i,-1,-1, FAST);
+moveleg(4,i,-1,-1, FAST);
 }
 }
-moveleg(6,90,90,90, SLOW);
+moveleg(4,90,90,90, SLOW);
+moveleg(2,90,90,90, SLOW);
 }
 
 void wave_l(){
+moveleg(3,-1,150,90, SLOW);
 for (int j=0; j< 3; j++){
 moveleg(1,-1,160,0, SLOW);
 for (int i=30; i <= 110; i++){
@@ -160,111 +161,88 @@ moveleg(1,i,-1,-1, FAST);
 }
 }
 moveleg(1,90,90,90, SLOW);
+moveleg(3,90,90,90, SLOW);
 }
 
 void skew_r(){
 moveleg(1,20,-1,-1, FAST);
 moveleg(2,20,-1,-1, FAST);
-moveleg(3,20,-1,-1, FAST);
+moveleg(3,160,-1,-1, FAST);
 moveleg(4,160,-1,-1, FAST);
-moveleg(5,160,-1,-1, FAST);
-moveleg(6,160,-1,-1, FAST);
 }
 void skew_l(){
 moveleg(1,160,-1,-1, FAST);
 moveleg(2,160,-1,-1, FAST);
-moveleg(3,160,-1,-1, FAST);
+moveleg(3,20,-1,-1, FAST);
 moveleg(4,20,-1,-1, FAST);
-moveleg(5,20,-1,-1, FAST);
-moveleg(6,20,-1,-1, FAST);
 }
 void courtsy(){
 moveleg(1,-1,140,80, FAST);
-moveleg(6,-1,140,80, FAST);
-moveleg(2,-1,-1,80, FAST);
-moveleg(5,-1,-1,80, FAST);
+moveleg(4,-1,140,80, FAST);
+moveleg(2,-1,40,80, FAST);
 moveleg(3,-1,40,80, FAST);
-moveleg(4,-1,40,80, FAST);
 
 }
 void prepare_jump(){
 moveleg(1,-1,40,80, FAST);
-moveleg(6,-1,40,80, FAST);
-moveleg(2,-1,-1,80, FAST);
-moveleg(5,-1,-1,80, FAST);
+moveleg(4,-1,40,80, FAST);
+moveleg(2,-1,140,80, FAST);
 moveleg(3,-1,140,80, FAST);
-moveleg(4,-1,140,80, FAST);
-}
-
-void rotate_r(){
-yield();
-Serial.println("In rot R Loop");
-stp(1,160, SLOW);
-stp(3,160, SLOW);
-stp(5,20, SLOW);
-stp(2,160, SLOW);
-stp(4,20, SLOW);
-stp(6,20, SLOW);
-delay(50);
-mov(6,90, FAST);
-mov(5,90, FAST);
-mov(4,90, FAST);
-mov(3,90, FAST);
-mov(2,90, FAST);
-mov(1,90, FAST);
 }
 
 void rotate_l(){
 yield();
 Serial.println("In rot L Loop");
-stp(1,20, SLOW);
+stp(1,160, SLOW);
+stp(2,160, SLOW);
 stp(3,20, SLOW);
-stp(5,160, SLOW);
+stp(4,20, SLOW);
+delay(50);
+mov(4,90, FAST);
+mov(3,90, FAST);
+mov(2,90, FAST);
+mov(1,90, FAST);
+}
+
+void rotate_r(){
+yield();
+Serial.println("In rot R Loop");
+stp(1,20, SLOW);
 stp(2,20, SLOW);
+stp(3,160, SLOW);
 stp(4,160, SLOW);
-stp(6,160, SLOW);
 delay(50);
 mov(1,90, FAST);
 mov(2,90, FAST);
 mov(3,90, FAST);
 mov(4,90, FAST);
-mov(5,90, FAST);
-mov(6,90, FAST);
-}
-
-void forward(){
-yield();
-Serial.println("In Forward Loop");
-mov(6,50, FAST);
-mov(1,50, FAST);
-mov(2,50, FAST);
-mov(5,50, FAST);
-mov(4,50, FAST);
-mov(3,50, FAST);
-stp(1,130, SLOW);
-stp(6,130, SLOW);
-stp(5,130, SLOW);
-stp(2,130, SLOW);
-stp(3,130, SLOW);
-stp(4,130, SLOW);
-delay(SLOW);
-iniz();
 }
 
 void backward(){
 yield();
 Serial.println("In Backward Loop");
-mov(3,130, FAST);
-mov(4,130, FAST);
-mov(5,130, FAST);
+mov(4,50, FAST);
+mov(1,50, FAST);
+mov(3,50, FAST);
+mov(2,50, FAST);
+stp(1,130, SLOW);
+stp(4,130, SLOW);
+stp(2,130, SLOW);
+stp(3,130, SLOW);
+delay(SLOW);
+iniz();
+}
+
+void forward(){
+yield();
+Serial.println("In Forward Loop");
 mov(2,130, FAST);
+mov(3,130, FAST);
 mov(1,130, FAST);
-mov(6,130, FAST);
-stp(4,50, SLOW);
+mov(4,130, FAST);
 stp(3,50, SLOW);
 stp(2,50, SLOW);
-stp(5,50, SLOW);
-stp(6,50, SLOW);
+stp(4,50, SLOW);
 stp(1,50, SLOW);
 delay(SLOW);
 iniz();
@@ -387,6 +365,30 @@ switch (rcvdata)
      {
         Serial.println("LOOP Case E");
         iniz();
+        break;
+     }
+        case 's': 
+     {
+        Serial.println("LOOP Case s");
+        stand();
+        break;
+     }
+       case 'q': 
+     {
+        Serial.println("LOOP Case q");
+        squat();
+        break;
+     }
+       case 'l': 
+     {
+        Serial.println("LOOP Case l");
+        wave_l();
+        break;
+     }
+       case 'r': 
+     {
+        Serial.println("LOOP Case r");
+        wave_r();
         break;
      }
   }
