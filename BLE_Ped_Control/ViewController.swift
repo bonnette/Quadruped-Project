@@ -245,10 +245,10 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     
     override func viewWillAppear(_ animated: Bool) {
         // Add rounded corners to btStatus label
-        btStatus.layer.masksToBounds = true
-        btStatus.layer.cornerRadius = 8.0
+        //btStatus.layer.masksToBounds = true
+        //btStatus.layer.cornerRadius = 8.0
         // Round stop Button
-        stopBtn.layer.cornerRadius = 0.5 * stopBtn.bounds.size.width
+        //stopBtn.layer.cornerRadius = 0.5 * stopBtn.bounds.size.width
         
         stopBtn.isEnabled = false // Disable button
         stopBtn.alpha = 0.3 // Dim button
