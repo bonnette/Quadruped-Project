@@ -112,32 +112,32 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         btStatus.image = UIImage(named:"bt_r") // We change the graphic
         
         stopBtn.isEnabled = false // Disable button
-        stopBtn.alpha = 0.3 // Dim button
+        stopBtn.alpha = 0.8 // Dim button
         
         fwdBtn.isEnabled = false // Disable button
-        fwdBtn.alpha = 0.3 // Dim button
+        fwdBtn.alpha = 0.8 // Dim button
         
         bckBtn.isEnabled = false // Disable button
-        bckBtn.alpha = 0.3 // Dim button
+        bckBtn.alpha = 0.8 // Dim button
         
         rBtn.isEnabled = false // Disable button
-        rBtn.alpha = 0.3 // Dim button
+        rBtn.alpha = 0.8 // Dim button
         
         lBtn.isEnabled = false // Disable button
-        lBtn.alpha = 0.3 // Dim button
+        lBtn.alpha = 0.8 // Dim button
         
         // special Buttons
         stndBtn.isEnabled = false // Disable button
-        stndBtn.alpha = 0.3 // Dim button
+        stndBtn.alpha = 0.8 // Dim button
         
         sqtBtn.isEnabled = false // Disable button
-        sqtBtn.alpha = 0.3 // Dim button
+        sqtBtn.alpha = 0.8 // Dim button
         
         wvlBtn.isEnabled = false // Disable button
-        wvlBtn.alpha = 0.3 // Dim button
+        wvlBtn.alpha = 0.8 // Dim button
         
         wvrBtn.isEnabled = false // Disable button
-        wvrBtn.alpha = 0.3 // Dim button
+        wvrBtn.alpha = 0.8 // Dim button
 
         central.scanForPeripherals(withServices: nil, options: nil)
     }
