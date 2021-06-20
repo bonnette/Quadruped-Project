@@ -62,7 +62,7 @@ const int LED = 2; // Could be different depending on the dev board. I used the 
 #define CHARACTERISTIC_UUID_RX "DF02"
 #define CHARACTERISTIC_UUID_TX "DF03"
  
-void servocontrol(int n, int a) // n= servo number a= angle
+void servocontrol(int n, int a) // n= leg number a= angle
 {
 if (n > 5){
 a = map(a, 180, 0, SERVOMIN, SERVOMAX);
@@ -74,7 +74,7 @@ pwm.setPWM(n, 0, a);}
 
 // n = leg number, an = coxa servo (sits on the body), f = femer servo (one servo out from the body), t = tibia servo (last servo out from the body)
 // example: Leg #1  an = i2c channel 0, f = i2c channel 1, t = i2c channel 2
-// moveleg converts each leg segment into a channel number, and the angle. It then sends it to servocontrol(servo number (I2C channel) , angle)
+// moveleg converts each leg segment into a channel number, and feeds an angle to that channel. It then sends it to servocontrol(servo number (I2C channel) , angle)
 
 void moveleg(int n, int an, int f, int t, int w)
 {
@@ -137,20 +137,20 @@ moveleg(4,-1,130,100, FAST);
 void wave_r(){
 moveleg(2,-1,150,90, SLOW);
 for (int j=0; j< 3; j++){
-moveleg(4,-1,160,0, SLOW);
+moveleg(3,-1,160,0, SLOW);
 for (int i=30; i <= 110; i++){
-moveleg(4,i,-1,-1, FAST);
+moveleg(3,i,-1,-1, FAST);
 }
 for (int i=110; i >= 20; i--){
-moveleg(4,i,-1,-1, FAST);
+moveleg(3,i,-1,-1, FAST);
 }
 }
-moveleg(4,90,90,90, SLOW);
+moveleg(3,90,90,90, SLOW);
 moveleg(2,90,90,90, SLOW);
 }
 
 void wave_l(){
-moveleg(3,-1,150,90, SLOW);
+moveleg(4,-1,150,90, SLOW);
 for (int j=0; j< 3; j++){
 moveleg(1,-1,160,0, SLOW);
 for (int i=30; i <= 110; i++){
@@ -161,7 +161,7 @@ moveleg(1,i,-1,-1, FAST);
 }
 }
 moveleg(1,90,90,90, SLOW);
-moveleg(3,90,90,90, SLOW);
+moveleg(4,90,90,90, SLOW);
 }
 
 void skew_r(){
